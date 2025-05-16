@@ -1,0 +1,12 @@
+[project]
+name = "attn_warp"
+description = "Diffusion-Based Attention Warping for Consistent 3D Scene Editing."
+version = "0.1.0"
+
+[tool.setuptools.packages.find]
+include = ["attn_warp*", "splatfacto_2dgs*", "ip2p"]
+
+# register the entry point of your new method here:
+[project.entry-points.'nerfstudio.method_configs']
+splatfacto-2dgs = 'splatfacto_2dgs.config:splatfacto_2dgs'
+attn_warp = 'ip2p.warp_attention_config:attn_warp_method'
